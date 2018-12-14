@@ -1,7 +1,7 @@
-all: Lachi-Dollar
+all: ../bin/Lachi-Dollar
 
-myblock: main.o block.o blockchain.o
-	g++ main.o block.o blockchain.o -o Lachi-Dollar -lssl -lcrypto
+../bin/Lachi-Dollar: main.o block.o blockchain.o
+	g++ main.o block.o blockchain.o -o ../bin/Lachi-Dollar -lssl -lcrypto
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -13,4 +13,4 @@ blockchain.o: blockchain.cpp
 	g++ -c blockchain.cpp
 
 clean:
-	rm *o myblock
+	rm *o ../bin/
